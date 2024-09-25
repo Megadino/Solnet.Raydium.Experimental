@@ -5,7 +5,7 @@ VisualStudioVersion = 16.6.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solnet.Raydium.Test", "Solnet.Raydium.Test\Solnet.Raydium.Test.csproj", "{BD4EB2AF-3BB3-4B1A-8C75-4A690B209949}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solnet.Raydium", "Solnet.Raydium\Solnet.Raydium.csproj", "{71A4300E-545E-4754-99FD-BB1CBAD40CCA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solnet.Raydium.Experimental", "Solnet.Raydium\Solnet.Raydium.Experimental.csproj", "{71A4300E-545E-4754-99FD-BB1CBAD40CCA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solnet.Raydium.Examples", "Solnet.Raydium.Examples\Solnet.Raydium.Examples.csproj", "{9AC72DCB-8418-43C7-AFAB-9865265F2A40}"
 EndProject
@@ -17,9 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{BD4EB2AF-3BB3-4B1A-8C75-4A690B209949}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -58,5 +55,8 @@ Global
 		{9AC72DCB-8418-43C7-AFAB-9865265F2A40}.Release|x64.Build.0 = Release|Any CPU
 		{9AC72DCB-8418-43C7-AFAB-9865265F2A40}.Release|x86.ActiveCfg = Release|Any CPU
 		{9AC72DCB-8418-43C7-AFAB-9865265F2A40}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal

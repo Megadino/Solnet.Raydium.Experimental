@@ -1,8 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <Description>
-          Solnet.Raydium implements functionality to integrate Raydium project into .Net applications.
+          Solnet.Raydium.Experimental enhances Solnet.Raydium with fixes and experimental features.
         </Description>
         <TargetFramework>net5.0</TargetFramework>
 
