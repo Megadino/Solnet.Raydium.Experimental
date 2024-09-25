@@ -1,0 +1,3 @@
+[submodule "Solnet.Experimental"]
+	path = Solnet.Experimental
+	url = https://github.com/Megadino/Solnet.Experimental.git
