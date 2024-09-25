@@ -4,7 +4,7 @@
         <Description>
           Solnet.Raydium.Experimental enhances Solnet.Raydium with fixes and experimental features.
         </Description>
-        <TargetFramework>net5.0</TargetFramework>
+        <TargetFramework>net6.0</TargetFramework>
 
         <IsPackable>false</IsPackable>
 
@@ -18,12 +18,15 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0.0" />
-        <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="5.0.0.0" />
-        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0.0" />
-        <PackageReference Include="Solnet.Programs" Version="0.4.3" />
-        <PackageReference Include="Solnet.Rpc" Version="0.4.3" />
-        <PackageReference Include="Solnet.Wallet" Version="0.4.3" />
+        <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="6.0.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Solnet.Experimental\src\Solnet.Programs\Solnet.Programs.csproj" />
+      <ProjectReference Include="..\Solnet.Experimental\src\Solnet.Rpc\Solnet.Rpc.csproj" />
+      <ProjectReference Include="..\Solnet.Experimental\src\Solnet.Wallet\Solnet.Wallet.csproj" />
     </ItemGroup>
 
     <Import Project="..\SharedBuildProperties.props" />

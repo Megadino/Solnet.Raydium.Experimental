@@ -1,7 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net5.0</TargetFramework>
+        <TargetFramework>net6.0</TargetFramework>
 
         <IsPackable>false</IsPackable>
     </PropertyGroup>
@@ -16,8 +16,6 @@
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
-        <PackageReference Include="Solnet.Rpc" Version="0.4.3" />
-        <PackageReference Include="Solnet.Wallet" Version="0.4.3" />
     </ItemGroup>
 
     <ItemGroup>
