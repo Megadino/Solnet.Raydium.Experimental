@@ -1,11 +1,11 @@
-﻿using Solnet.Wallet;
+﻿using Solnet.Raydium.Models.Layouts;
+using Solnet.Wallet;
 using Solnet.Wallet.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
+
 
 namespace Solnet.Raydium.Utilities
 {
@@ -14,7 +14,6 @@ namespace Solnet.Raydium.Utilities
     /// </summary>
     public class BufferDecoder
     {
-
         /// <summary>
         /// Length of the byte buffer.
         /// </summary>
@@ -76,6 +75,14 @@ namespace Solnet.Raydium.Utilities
             return value;
         }
 
+        public byte ReadByte(int index)
+        {
+            if (index >= Length) throw new ApplicationException("Buffer exhausted");
+            byte value = _buffer[index];
+            
+            return value;
+        }
+
         /// <summary>
         /// Reads one byte from the buffer and advances the cursor position.
         /// </summary>
@@ -88,6 +95,14 @@ namespace Solnet.Raydium.Utilities
             return span;
         }
 
+        public Span<byte> ReadBytes(int bytesToRead, int index)
+        {
+            if ((index + bytesToRead) > Length) throw new ApplicationException("Buffer exhausted");
+            var span = _buffer.AsSpan(index, bytesToRead);
+            
+            return span;
+        }
+
         /// <summary>
         /// Reads a PublicKey from the buffer and advances the cursor position.
         /// </summary>
@@ -97,6 +112,14 @@ namespace Solnet.Raydium.Utilities
             if ((Cursor + 32) > Length) throw new ApplicationException("Buffer exhausted");
             var pubkey = new PublicKey(_buffer.AsSpan(Cursor, 32));
             Cursor += 32;
+            return pubkey;
+        }
+
+        public PublicKey ReadPublicKey(int index)
+        {
+            if ((index + 32) > Length) throw new ApplicationException("Buffer exhausted");
+            var pubkey = new PublicKey(_buffer.AsSpan(index, 32));
+            
             return pubkey;
         }
 
@@ -124,14 +147,27 @@ namespace Solnet.Raydium.Utilities
             return value;
         }
 
+        public ulong ReadU64(int index)
+        {
+            if ((index + 8) > Length) throw new ApplicationException("Buffer exhausted");
+            var value = BitConverter.ToUInt64(_buffer, index);            
+            return value;
+        }
+
         /// <summary>
         /// Reads a PublicKey from the buffer and advances the cursor position.
         /// </summary>
         /// <returns></returns>
         public U128 ReadU128()
         {
-            if ((Cursor + 8) > Length) throw new ApplicationException("Buffer exhausted");
+            if ((Cursor + 16) > Length) throw new ApplicationException("Buffer exhausted");
             return new U128(ReadBytes(16));
+        }
+
+        public U128 ReadU128(int index)
+        {
+            if ((index + 16) > Length) throw new ApplicationException("Buffer exhausted");
+            return new U128(ReadBytes(16, index));
         }
 
         /// <summary>
@@ -139,11 +175,11 @@ namespace Solnet.Raydium.Utilities
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns>An instance of the type specified populated with the decoded data properties populated.</returns>
-        public T DecodeAs<T >() where T : new()
+        public T DecodeAs<T>() where T : new()
         {
-            var dataType = typeof (T);
+            var dataType = typeof(T);
             var obj = new T();
-            foreach(var prop in dataType.GetProperties())
+            foreach (var prop in dataType.GetProperties())
             {
                 if (prop.PropertyType == typeof(ulong))
                 {
@@ -166,6 +202,48 @@ namespace Solnet.Raydium.Utilities
                     throw new NotSupportedException($"Property {prop.Name} type {prop.PropertyType.FullName}");
                 }
             }
+            return obj;
+        }
+
+        /// <summary>
+        /// Decode the buffer faster using only properties marked as [Decode] in a type as a layout guide for properties
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns>An instance of the type specified populated with the decoded data properties populated.</returns>
+        public T DecodeFastAs<T >() where T : new()
+        {
+            var dataType = typeof (T);
+            var obj = new T();
+
+            var toDecode = (obj is BaseLayout) ? (obj as BaseLayout).GetOffsets() : new Dictionary<PropertyInfo, int>();
+
+            dataType.GetProperties().AsParallel().ForAll(prop =>
+            {
+                if (!toDecode.TryGetValue(prop, out var ind))
+                    return;
+                
+                if (prop.PropertyType == typeof(ulong))
+                {
+                    prop.SetValue(obj, ReadU64(ind));
+                }
+                else if (prop.PropertyType == typeof(PublicKey))
+                {
+                    prop.SetValue(obj, ReadPublicKey(ind));
+                }
+                else if (prop.PropertyType == typeof(byte))
+                {
+                    prop.SetValue(obj, ReadByte(ind));
+                }
+                else if (prop.PropertyType == typeof(U128))
+                {
+                    prop.SetValue(obj, ReadU128(ind));
+                }
+                else
+                {
+                    throw new NotSupportedException($"Property {prop.Name} type {prop.PropertyType.FullName}");
+                }
+            });
+
             return obj;
         }
 
