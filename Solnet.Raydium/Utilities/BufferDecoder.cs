@@ -136,6 +136,17 @@ namespace Solnet.Raydium.Utilities
         }
 
         /// <summary>
+        /// Reads a uint from the buffer and advances the cursor position.
+        /// </summary>
+        /// <returns>A uint value read from the buffer.</returns>
+        public uint ReadU32(int index)
+        {
+            if ((index + 4) > Length) throw new ApplicationException("Buffer exhausted");
+            var value = BitConverter.ToUInt32(_buffer, index);
+            return value;
+        }
+
+        /// <summary>
         /// Reads a ulong from the buffer and advances the cursor position.
         /// </summary>
         /// <returns>An ulong value read from the buffer.</returns>
@@ -237,6 +248,10 @@ namespace Solnet.Raydium.Utilities
                 else if (prop.PropertyType == typeof(U128))
                 {
                     prop.SetValue(obj, ReadU128(ind));
+                }
+                else if (prop.PropertyType == typeof(UInt32))
+                {
+                    prop.SetValue(obj, ReadU32(ind));
                 }
                 else
                 {
