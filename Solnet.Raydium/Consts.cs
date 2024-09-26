@@ -31,6 +31,8 @@ namespace Solnet.Raydium
         public const string CLMM = "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK";
         public const string Router = "routeUGWgWzqBWFcrCfv8tritsqukccJPu3q5GPP3xS";
 
+        public const string PumpFunPoolMigrator = "39azUYFWPz3VHgKCf3VChUwbpURdCHRxjWVowf5jUJjg";
+
         /// <summary>
         /// The public key of the sysvar clock account.
         /// </summary>
