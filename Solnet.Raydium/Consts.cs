@@ -19,8 +19,10 @@ namespace Solnet.Raydium
         public const string LIQUIDITY_POOL_PROGRAM_ID_V4 = "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8";
         public const string AmmV4 = "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8";
 
+        public const string RaydiumAuthority = "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1";
 
         public const string SERUM_MARKET = "9xQeWvG816bUx9EPjHmaT23yvVM2ZWbrrpZb9PusVFin";
+        
         public const string OPENBOOK_MARKET = "srmqPvymJeFKQ4zGQed1GFppgkRHL9kaELCbyksJtPX";
 
         public const string UTIL1216 = "CLaimxFqjHzgTJtAGHU47NPhg6qrc5sCnpC4tBLyABQS";
