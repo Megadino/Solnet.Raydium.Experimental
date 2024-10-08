@@ -1,4 +1,5 @@
 ﻿using Solnet.Wallet;
+using System.Collections.Generic;
 
 namespace Solnet.Raydium
 {
@@ -46,6 +47,21 @@ namespace Solnet.Raydium
         public static readonly PublicKey SYSVAR_CLOCK_PUBKEY = new("SysvarC1ock11111111111111111111111111111111");
 
         public static readonly PublicKey ModelDataPubkey = new PublicKey("CDSr3ssLcRB6XYPJwAfFt18MZvEZp4LjHcvzBVZ45duo");
+
+        public static readonly Dictionary<string, string> JitoTips = new Dictionary<string, string>() 
+        {
+            { "ADuUkR4vqLUMWXxW9gh6D6L8pMSawimctcNZ5pGwDcEt" , "Jitotip 6"},
+            { "HFqU5x63VTqvQss8hp11i4wVV8bD44PvwucfZ2bU7gRe" , "Jitotip 2"},
+            { "Cw8CFyM9FkoMi7K7Crf6HNQqf4uEMzpKw6QNghXLvLkY" , "Jitotip 3"},
+            { "96gYZGLnJYVFmbjzopPSU6QiEV5fGqZNyN9nmNhvrZU5" , "Jitotip 1"},
+            { "3AVi9Tg9Uo68tJfuvoKvqKNWKkC5wPdSSdeBnizKZ6jT" , "Jitotip 8"},
+            { "ADaUMid9yfUytqMBgopwjb2DTLSokTSzL1zt6iGPaS49" , "Jitotip 4"},
+            { "DttWaMuVvTiduZRnguLF7jNxTgiMBZ1hyAumKUiL2KRL" , "Jitotip 7"},
+            { "DfXygSm4jCyNCybVYYK6DwvWqjKee8pbDmJGcLWNDXjh" , "Jitotip 5"},
+
+            
+        };
+
 
     }
 }
