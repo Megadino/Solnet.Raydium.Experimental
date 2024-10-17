@@ -48,6 +48,8 @@ namespace Solnet.Raydium
 
         public static readonly PublicKey ModelDataPubkey = new PublicKey("CDSr3ssLcRB6XYPJwAfFt18MZvEZp4LjHcvzBVZ45duo");
 
+        public const string BananaGunRouter = "BANANAjs7FJiPQqJTGFzkZJndT9o7UmKiYYGaJz6frGu";
+        
         public static readonly Dictionary<string, string> JitoTips = new Dictionary<string, string>() 
         {
             { "ADuUkR4vqLUMWXxW9gh6D6L8pMSawimctcNZ5pGwDcEt" , "Jitotip 6"},
