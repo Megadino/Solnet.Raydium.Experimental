@@ -32,15 +32,7 @@ namespace Solnet.Raydium
         
         public const string AmmStable = "5quBtoiQqxF9Jv6KYKctB59NT3gtJD2Y65kdnB1Uev3h";
         public const string CLMM = "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK";
-        public const string Router = "routeUGWgWzqBWFcrCfv8tritsqukccJPu3q5GPP3xS";
-
-        public const string PumpFunPoolMigrator = "39azUYFWPz3VHgKCf3VChUwbpURdCHRxjWVowf5jUJjg";
-
-        public const string PumpFunMintAuthority = "TSLvdd1pWpHVjahSpsvCXUbgwsL3JAcvokwaKt1eokM";
-
-        public const string PumpFun = "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P";
-
-        public const string PumpFunAMM = "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA";
+        public const string Router = "routeUGWgWzqBWFcrCfv8tritsqukccJPu3q5GPP3xS";                                
 
         public const string MetaplexTokenMetadata = "metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s";        
 
@@ -57,11 +49,31 @@ namespace Solnet.Raydium
             { "3AVi9Tg9Uo68tJfuvoKvqKNWKkC5wPdSSdeBnizKZ6jT" , "Jitotip 8"},
             { "ADaUMid9yfUytqMBgopwjb2DTLSokTSzL1zt6iGPaS49" , "Jitotip 4"},
             { "DttWaMuVvTiduZRnguLF7jNxTgiMBZ1hyAumKUiL2KRL" , "Jitotip 7"},
-            { "DfXygSm4jCyNCybVYYK6DwvWqjKee8pbDmJGcLWNDXjh" , "Jitotip 5"},
-
-            
+            { "DfXygSm4jCyNCybVYYK6DwvWqjKee8pbDmJGcLWNDXjh" , "Jitotip 5"},            
         };
 
+        public class PumpDotFun
+        {
+            public const string PumpFunPoolMigrator = "39azUYFWPz3VHgKCf3VChUwbpURdCHRxjWVowf5jUJjg";
 
+            public const string PumpFunMintAuthority = "TSLvdd1pWpHVjahSpsvCXUbgwsL3JAcvokwaKt1eokM";
+
+            public const string PumpFun = "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P";
+
+            public const string PumpFunAMM = "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA";
+
+            public const string PumpFunGlobalConfig = "ADyA8hdefvWN2dbGGWFotbzWxrAvLW83WG6QCVXvJKqw";
+
+            public const string PumpFunAMMEventAuthority = "GS4CU59F31iL7aR2Q8zVS8DRrcRnXX1yjQ66TqNVQnaR";
+
+            public static readonly byte[] BUY_DISCRIMINATOR = { 102, 6, 61, 18, 1, 218, 235, 234 };
+            public static readonly byte[] SELL_DISCRIMINATOR = { 51, 230, 133, 164, 1, 127, 131, 173 };
+
+            public static readonly Dictionary<string, string> ProtocolFee = new Dictionary<string, string>()
+            {
+                { "7hTckgnGnLQR6sdH7YkqFTAA7VwTfYFaZ6EhEsU3saCX" , "X5QPJcpph4mBAJDzc4hRziFftSbcygV59kRb2Fu6Je1"},                                
+            };
+
+        }
     }
 }
