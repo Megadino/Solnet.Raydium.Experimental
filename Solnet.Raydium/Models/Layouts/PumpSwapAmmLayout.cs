@@ -51,5 +51,9 @@ namespace Solnet.Raydium.Models.Layouts
         [Offset(203)]
         [Decode]
         public ulong LpSupply { get; set; }
+
+        [Offset(211)]
+        [Decode]
+        public PublicKey CoinCreator { get; set; }
     }
 }
