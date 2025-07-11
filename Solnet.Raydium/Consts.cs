@@ -16,14 +16,8 @@ namespace Solnet.Raydium
 
         public const string STAKE_PROGRAM_ID_V5 = "9KEPoZmtHUrBbhWN1v1KWLMkkvwY6WLtAVUCPRtRjP4z";
         public const string FarmV5 = "9KEPoZmtHUrBbhWN1v1KWLMkkvwY6WLtAVUCPRtRjP4z";
-
-        public const string LIQUIDITY_POOL_PROGRAM_ID_V4 = "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8";
-        public const string AmmV4 = "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8";
-
-        public const string RaydiumAuthority = "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1";
-
-        public const string SERUM_MARKET = "9xQeWvG816bUx9EPjHmaT23yvVM2ZWbrrpZb9PusVFin";
         
+        public const string SERUM_MARKET = "9xQeWvG816bUx9EPjHmaT23yvVM2ZWbrrpZb9PusVFin";        
         public const string OPENBOOK_MARKET = "srmqPvymJeFKQ4zGQed1GFppgkRHL9kaELCbyksJtPX";
 
         public const string UTIL1216 = "CLaimxFqjHzgTJtAGHU47NPhg6qrc5sCnpC4tBLyABQS";
@@ -55,15 +49,10 @@ namespace Solnet.Raydium
         public class PumpDotFun
         {
             public const string PumpFunPoolMigrator = "39azUYFWPz3VHgKCf3VChUwbpURdCHRxjWVowf5jUJjg";
-
             public const string PumpFunMintAuthority = "TSLvdd1pWpHVjahSpsvCXUbgwsL3JAcvokwaKt1eokM";
-
             public const string PumpFun = "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P";
-
             public const string PumpFunAMM = "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA";
-
             public const string PumpFunGlobalConfig = "ADyA8hdefvWN2dbGGWFotbzWxrAvLW83WG6QCVXvJKqw";
-
             public const string PumpFunAMMEventAuthority = "GS4CU59F31iL7aR2Q8zVS8DRrcRnXX1yjQ66TqNVQnaR";
 
             public static readonly byte[] BUY_DISCRIMINATOR = { 102, 6, 61, 18, 1, 218, 235, 234 };
@@ -73,7 +62,12 @@ namespace Solnet.Raydium
             {
                 { "7hTckgnGnLQR6sdH7YkqFTAA7VwTfYFaZ6EhEsU3saCX" , "X5QPJcpph4mBAJDzc4hRziFftSbcygV59kRb2Fu6Je1"},                                
             };
+        }
 
+        public class RaydiumAmm
+        {
+            public const string AmmV4 = "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8";
+            public const string RaydiumAuthority = "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1";
         }
     }
 }
