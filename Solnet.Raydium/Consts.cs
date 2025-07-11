@@ -68,6 +68,24 @@ namespace Solnet.Raydium
         {
             public const string AmmV4 = "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8";
             public const string RaydiumAuthority = "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1";
+
+            public const string RaydiumMigrator = "RAYpQbFNq9i3mu6cKpTKKRwwHFDeK5AuZz8xvxUrCgw";
+            public const string RaydiumFeeKeyCpmm = "96wtMuDWqoKkz9Tim3XmqWm3qiySo3FAFjTXLwFJJk4A";
+            public const string RaydiumCPMM = "CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C";
+            public const string RaydiumVaultAuthority2 = "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL";
+            public const string RaydiumCPMMSolFee = "DNXgeM9EiiaAbaWvwjHj9fQQLAX5ZsfHyvmYUNRAdNC8";
+
+            public const string GlobalConfig = "6s1xP3hpbAfFoNtUNF8mfHsjr2Bd97JxFJRWLbL6aHuX";
+
+            public const string LockLP = "LockrWmn6K5twhz3y9w1dQERbmgSaRkfnTeTKbpofwE";
+            public const string LockCPMMLPAuthority = "3f7GcQFG397GAaEnv51zR6tsTVihYRydnydDD1cXekxH";
+        }
+
+        public class RaydiumLaunchpad
+        {
+            public const string Launchpad = "LanMV9sAd7wArD4vJFi2qDdfnVhFxYSUg6eADduJ3uj";
+            public const string Config = "FfYek5vEz23cMkWsdJwG2oa6EphsvXSHrGpdALN4g6W1";
+            public const string Authority = "WLHv2UAZm6z4KyaaELi5pjdbJh6RESMva1Rnn8pJVVh";
         }
     }
 }
