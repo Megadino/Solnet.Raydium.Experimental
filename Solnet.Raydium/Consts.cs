@@ -75,10 +75,13 @@ namespace Solnet.Raydium
             public const string RaydiumVaultAuthority2 = "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL";
             public const string RaydiumCPMMSolFee = "DNXgeM9EiiaAbaWvwjHj9fQQLAX5ZsfHyvmYUNRAdNC8";
 
+            public const string Config = "D4FPEruKEHrG5TenZ2mpDGEfu1iUvTiqBxvpU8HLBvC2";
             public const string GlobalConfig = "6s1xP3hpbAfFoNtUNF8mfHsjr2Bd97JxFJRWLbL6aHuX";
 
             public const string LockLP = "LockrWmn6K5twhz3y9w1dQERbmgSaRkfnTeTKbpofwE";
             public const string LockCPMMLPAuthority = "3f7GcQFG397GAaEnv51zR6tsTVihYRydnydDD1cXekxH";
+
+            public static readonly byte[] BUY_DISCRIMINATOR = [0x8F, 0xBE, 0x5A, 0xDA, 0xC4, 0x1E, 0x33, 0xDE];
         }
 
         public class RaydiumLaunchpad
